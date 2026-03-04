@@ -1,7 +1,19 @@
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping
+from pyexpat import model
+
+
 model.compile(
     optimizer=Adam(learning_rate=1e-4),
     loss='categorical_crossentropy',
     metrics=['accuracy']
+)
+
+history = model.fit(
+    train_generator,
+    validation_data=val_generator,
+    epochs=25,
+    callbacks=callbacks
 )
 
 checkpoint = ModelCheckpoint(

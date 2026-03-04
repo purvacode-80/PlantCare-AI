@@ -1,3 +1,8 @@
+import tensorflow as tf
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Dropout
+from tensorflow.keras.models import Model
+
 # Load MobileNetV2
 base_model = MobileNetV2(
     input_shape=(224,224,3),
