@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis Result</title>
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+<script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+
+        <div class="logo">
+            🌿 PlantCare AI
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/upload" class="btn-nav">Get Started</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<section class="result-header">
+
+<h1>Analysis Complete</h1>
+<p>Here's what we found</p>
+
+</section>
+
+
+<section class="result-container">
+
+
+<!-- Uploaded Image -->
+
+<div class="image-card">
+
+<h3>Uploaded Image</h3>
+
+<img src="{{ image_path }}" alt="Uploaded Leaf">
+
+</div>
+
+
+
+<!-- Result Card -->
+
+<div class="result-card {% if status == 'healthy' %}healthy{% else %}disease{% endif %}">
+
+{% if status == "healthy" %}
+
+<div class="status-badge healthy-badge">✓ Healthy Plant</div>
+<div class="status-icon">✔</div>
+
+{% else %}
+
+<div class="status-badge disease-badge">⚠ Disease Detected</div>
+<div class="status-icon">✖</div>
+
+{% endif %}
+
+
+<div class="result-box">
+
+<p class="label">Plant Type</p>
+<h3>{{ plant }}</h3>
+
+</div>
+
+
+<div class="result-box">
+
+<p class="label">Condition</p>
+<h3>{{ disease }}</h3>
+
+</div>
+
+
+
+{% if status == "healthy" %}
+
+<div class="advice healthy-advice">
+
+<h4>Keep Your Plant Healthy</h4>
+
+<ul>
+<li>Continue regular watering and care</li>
+<li>Ensure adequate sunlight</li>
+<li>Monitor for any unusual changes</li>
+<li>Maintain good air circulation</li>
+</ul>
+
+</div>
+
+{% else %}
+
+<div class="advice disease-advice">
+
+<h4>Recommended Actions</h4>
+
+<ul>
+<li>Isolate affected plants</li>
+<li>Consult agricultural expert</li>
+<li>Use appropriate treatment</li>
+<li>Monitor nearby plants</li>
+</ul>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</section>
+
+
+
+<div class="result-buttons">
+
+<a href="/upload" class="btn-primary">Analyze Another Image</a>
+
+<a href="/" class="btn-secondary">Back to Home</a>
+
+</div>
+
+
+
+<footer class="footer">
+
+<p>🌱 Smart Bridge Hyderabad</p>
+<p>Empowering agriculture through innovative AI solutions</p>
+<p>© 2025 Smart Bridge Hyderabad. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>

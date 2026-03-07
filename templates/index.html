@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantCare AI</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+
+        <div class="logo">
+            🌿 PlantCare AI
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/upload" class="btn-nav">Get Started</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+
+            <h1>AI-Powered <span>Plant Disease Detection</span></h1>
+
+            <p>
+                Protect your crops with cutting-edge artificial intelligence.
+                Instant disease identification for healthier plants and better yields.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/upload" class="btn-primary">Upload Image</a>
+                <a href="/about" class="btn-secondary">About</a>
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/plant.jpg') }}" alt="plant">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE SECTION -->
+
+<section class="features">
+
+<h2>Why Choose PlantCare AI?</h2>
+
+<div class="feature-cards">
+
+<div class="card">
+<h3>Instant Detection</h3>
+<p>Get results in seconds with our advanced AI model trained on thousands of plant images.</p>
+</div>
+
+<div class="card">
+<h3>High Accuracy</h3>
+<p>Powered by MobileNetV2 architecture to detect diseases across multiple plant species.</p>
+</div>
+
+<div class="card">
+<h3>Easy to Use</h3>
+<p>Simple interface: upload a photo and get instant diagnosis.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS SECTION -->
+
+<section class="stats">
+
+<div class="stats-container">
+
+<div class="stat">
+<h2>38+</h2>
+<p>Plant Diseases</p>
+</div>
+
+<div class="stat">
+<h2>95%</h2>
+<p>Accuracy Rate</p>
+</div>
+
+<div class="stat">
+<h2>10+</h2>
+<p>Plant Species</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Available</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA SECTION -->
+
+<section class="cta">
+
+<h2>Ready to Protect Your Plants?</h2>
+
+<p>Start detecting plant diseases with our AI-powered system.</p>
+
+<a href="/upload" class="btn-primary">Get Started Now</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<p>© 2025 Smart Bridge Hyderabad. All rights reserved.</p>
+
+</footer>
+
+
+</body>
+</html>

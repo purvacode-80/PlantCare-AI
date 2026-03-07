@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Plant Image</title>
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+<script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+
+        <div class="logo">
+            🌿 PlantCare AI
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/upload" class="btn-nav">Get Started</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<!-- PAGE TITLE -->
+
+<section class="upload-hero">
+<h1>Upload Plant Image</h1>
+<p>Take or upload a clear photo of the affected plant leaf</p>
+</section>
+
+
+<!-- UPLOAD BOX -->
+
+<section class="upload-container">
+
+<form id="upload-form" action="/predict" method="POST" enctype="multipart/form-data">
+
+<div class="upload-box">
+
+<div class="upload-icon">📷</div>
+
+<h3>Drag & Drop Your Image Here</h3>
+
+<p class="upload-sub">
+or click below to browse
+</p>
+
+<p class="upload-types">
+Supported: JPG, JPEG, PNG (Max 10MB)
+</p>
+
+<input type="file" name="file" id="file-input" accept="image/*" hidden>
+
+<label for="file-input" class="upload-btn">
+📁 Choose Image
+</label>
+
+</div>
+
+<!-- File preview -->
+<div id="preview-section" class="preview-section" style="display:none;">
+    <div class="preview-card">
+        <img id="preview-img" src="" alt="Preview">
+        <div id="filename-display" class="filename-display"></div>
+    </div>
+</div>
+
+<div class="action-buttons">
+    <button type="submit" id="submit-btn" class="submit-btn" style="display:none;">
+        🔍 Analyze Plant
+    </button>
+    <button type="button" id="cancel-btn" class="cancel-btn" style="display:none;">
+        Cancel
+    </button>
+</div>
+
+<div id="loader" class="loader-overlay" style="display:none;">
+    <div class="loader-content">
+        <div class="spinner"></div>
+        <p>Analyzing your plant...</p>
+    </div>
+</div>
+
+</form>
+
+</section>
+
+
+
+<!-- TIPS -->
+
+<section class="tips">
+
+<h3>📷 Tips for Best Results</h3>
+
+<div class="tips-grid">
+
+<div class="tip-card">
+✔ Take photos in good lighting
+</div>
+
+<div class="tip-card">
+✔ Focus on the affected leaf area
+</div>
+
+<div class="tip-card">
+✔ Keep the camera steady
+</div>
+
+<div class="tip-card">
+✔ Avoid blurry images
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<p>🌱 Smart Bridge Hyderabad</p>
+
+<p>Empowering agriculture through innovative AI solutions</p>
+
+<p>© 2025 Smart Bridge Hyderabad. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
